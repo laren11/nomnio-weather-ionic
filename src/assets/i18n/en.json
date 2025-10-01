@@ -1,0 +1,14 @@
+{
+  "TITLE": "Ionic Weather",
+  "SELECT_LANGUAGE": "Select language",
+  "SELECT_LOCATION": "Select location",
+  "TEMPERATURE": "Temperature",
+  "FEELS_LIKE": "Feels like",
+  "INSTRUCTION_TITLE": "Select location",
+  "INSTRUCTION_SUBTITLE": "Select location to display weather information",
+  "INSTRUCTION_ERROR": "An error occurred.\nPlease select a different location.",
+  "LOADING_DATA": "Loading data...",
+  "CANCEL": "Cancel",
+  "LOC_INVALID": "Invalid location",
+  "CURRENT_LOCATION": "Current location"
+}

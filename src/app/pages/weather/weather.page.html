@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="toolbar-left">
+      <ion-icon name="sunny-outline" aria-hidden="true"></ion-icon>
+      <span class="app-title">Nomnio Weather</span>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear" size="small" (click)="openLanguageSheet()">
+        {{ (selectedLang || 'en') | uppercase }}
+        <ion-icon
+          name="chevron-down-outline"
+          class="lang-caret"
+          slot="end"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-refresher slot="fixed" (ionRefresh)="onRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-list lines="none">
+      <ng-container *ngIf="!(weather$ | async)">
+        <div class="instructions">
+          <div class="title">{{ 'INSTRUCTION_TITLE' | translate }}</div>
+          <div class="subtitle" *ngIf="!(error$ | async)">
+            {{ 'INSTRUCTION_SUBTITLE' | translate }}
+          </div>
+          <div class="subtitle error" *ngIf="(error$ | async)">
+            {{ 'INSTRUCTION_ERROR' | translate }}
+          </div>
+        </div>
+      </ng-container>
+
+      <ion-item
+        class="card weather"
+        *ngIf="!(loading$ | async) && (weather$ | async) as w"
+      >
+        <ion-label>
+          <h2 class="city">{{ w.name }}</h2>
+          <p class="date">{{ w.dt * 1000 | date:'d.M.y \'at\' HH:mm' }}</p>
+          <p class="desc">{{ w.weather?.[0]?.description }}</p>
+          <p class="metric">
+            {{ 'TEMPERATURE' | translate }} {{ w.main?.temp | number:'1.0-1' }}
+            °C
+          </p>
+          <p class="metric">
+            {{ 'FEELS_LIKE' | translate }} {{ w.main?.feels_like |
+            number:'1.0-1' }} °C
+          </p>
+        </ion-label>
+        <ion-icon
+          slot="end"
+          name="partly-sunny-outline"
+          class="wx-icon"
+        ></ion-icon>
+      </ion-item>
+
+      <ion-item
+        class="card select"
+        button
+        detail="false"
+        (click)="openLocationSheet()"
+      >
+        <ion-label>
+          {{ (loading$ | async) ? ('LOADING_DATA' | translate) :
+          ('SELECT_LOCATION' | translate) }}
+        </ion-label>
+        <ion-spinner *ngIf="(loading$ | async)" slot="end"></ion-spinner>
+        <ion-icon
+          *ngIf="!(loading$ | async)"
+          slot="end"
+          name="chevron-forward-outline"
+        ></ion-icon>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

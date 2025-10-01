@@ -34,4 +34,125 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+:root {
+  /* Brand */
+  --ion-color-primary: #3b82f6; /* Figma primary */
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #346fcd;
+  --ion-color-primary-tint: #4d8ef7;
+
+  /* Surfaces / text */
+  --app-bg: #ffffff; /* Figma surface */
+  --app-text: #0f172a; /* main text */
+  --app-text-subtle: #64748b; /* secondary text */
+  --app-border: #e5e7eb;
+
+  /* Cards / radius / shadows */
+  --app-radius: 16px; /* Figma corner radius */
+  --app-elev: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  /* Spacing scale */
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+
+  /* Typography */
+  --app-font: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif;
+  --app-title-size: 18px; /* tune to figma */
+  --app-body-size: 14px;
+  --app-label-size: 13px;
+}
+
+.bottom-sheet {
+  --background: #ffffff;
+  --color: #111;
+  --title-color: #111;
+  --button-color: #111;
+  --button-background: #ffffff;
+  --button-background-activated: #f5f5f5;
+  --button-background-focused: #f5f5f5;
+  --backdrop-opacity: 0.32;
+
+  --ion-background-color: #ffffff;
+  --ion-text-color: #111;
+  --ion-overlay-background-color: #ffffff;
+}
+
+.bottom-sheet.action-sheet-md,
+.bottom-sheet.action-sheet-ios {
+  background: #ffffff !important;
+  color: #111 !important;
+}
+
+.bottom-sheet .action-sheet-wrapper,
+.bottom-sheet .action-sheet-container {
+  background: #ffffff !important;
+  color: #111 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-top-left-radius: 14px !important;
+  border-top-right-radius: 14px !important;
+  overflow: hidden;
+}
+
+.bottom-sheet .action-sheet-group {
+  background: #ffffff !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.bottom-sheet .action-sheet-group::before,
+.bottom-sheet .action-sheet-group::after {
+  content: none !important;
+  display: none !important;
+}
+
+.bottom-sheet .action-sheet-title {
+  background: transparent !important;
+  color: #111 !important;
+  text-align: left !important;
+  padding: 12px 16px 6px 16px !important;
+  margin: 0 !important;
+  border: 0 !important;
+  font-weight: 500 !important;
+  min-height: 30px !important;
+}
+
+.bottom-sheet .action-sheet-button,
+.bottom-sheet .action-sheet-cancel {
+  background: #ffffff !important;
+  color: #111 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  text-align: left !important;
+  justify-content: flex-start !important;
+  padding: 12px 16px !important;
+  min-height: 48px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+.bottom-sheet .action-sheet-button:active,
+.bottom-sheet .action-sheet-button:focus-visible,
+.bottom-sheet .action-sheet-cancel:active,
+.bottom-sheet .action-sheet-cancel:focus-visible {
+  background: #f5f5f5 !important;
+}
+
+.bottom-sheet .action-sheet-group[role="cancel"] {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  background: #ffffff !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.bottom-sheet .action-sheet-group,
+.bottom-sheet .action-sheet-group * {
+  background-image: none !important;
+}

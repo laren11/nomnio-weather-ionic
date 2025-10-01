@@ -1,0 +1,14 @@
+{
+  "TITLE": "Ionic Vreme",
+  "SELECT_LANGUAGE": "Izberite jezik",
+  "SELECT_LOCATION": "Izberite lokacijo",
+  "TEMPERATURE": "Temperatura",
+  "FEELS_LIKE": "Občutek kot",
+  "INSTRUCTION_TITLE": "Izberite lokacijo",
+  "INSTRUCTION_SUBTITLE": "Izberite lokacijo za prikaz vremenskih podatkov",
+  "INSTRUCTION_ERROR": "Prišlo je do napake.\nProsimo, izberite drugo lokacijo.",
+  "LOADING_DATA": "Nalaganje podatkov...",
+  "CANCEL": "Prekliči",
+  "LOC_INVALID": "Neveljavna lokacija",
+  "CURRENT_LOCATION": "Trenutna lokcaija"
+}
